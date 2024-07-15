@@ -5,6 +5,7 @@ import requests
 def get_jenkins_status():
     jenkins_url = 'https://mkjk.ideractive.com/api/json'  # Replace with your Jenkins URL
     response = requests.get(jenkins_url)
+    st.write(response.text)  # Print the response content
     try:
         data = response.json()
     except ValueError as e:
