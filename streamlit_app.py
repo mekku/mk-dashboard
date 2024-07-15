@@ -5,7 +5,11 @@ import requests
 def get_jenkins_status():
     jenkins_url = 'https://mkjk.ideractive.com/api/json'  # Replace with your Jenkins URL
     response = requests.get(jenkins_url)
-    data = response.json()
+    try:
+        data = response.json()
+    except ValueError as e:
+        st.error(f"Error parsing JSON: {e}")
+        return None
     build_status = data['jobs'][0]['color']
     return build_status
 
