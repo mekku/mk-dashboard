@@ -18,12 +18,14 @@ def get_btc_price():
     return btc_price
 
 # st.title('Custom Dashboard')
+btc_price = get_btc_price()
+st.write(f'# BTC Price: ${btc_price}')
 
-if st.button('Refresh'):
-    # jenkins_status = get_jenkins_status()
-    btc_price = get_btc_price()
+# if st.button('Refresh'):
+#     # jenkins_status = get_jenkins_status()
+#     btc_price = get_btc_price()
     
-    # st.write(f'Jenkins Build Status: {jenkins_status}')
-    st.write(f'# BTC Price: ${btc_price}')
-else:
-    st.write('Click the button to refresh the data.')
+#     # st.write(f'Jenkins Build Status: {jenkins_status}')
+#     st.write(f'# BTC Price: ${btc_price}')
+# else:
+#     st.write('Click the button to refresh the data.')
